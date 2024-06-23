@@ -1,0 +1,83 @@
+﻿@model Contract_Administrator.ViewModels.ContractViewModel
+
+@{
+    ViewData["Title"] = "Nová smlouva";
+}
+
+<div class="row">
+    <h3 class="col-lg">Nová smlouva</h3>
+    <a asp-action="Index" class="col-lg-auto d-none d-lg-flex">Zpět na přehled</a>
+</div>
+<hr />
+
+<div class="row">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.RegistrationNumber" class="control-label"></label>
+                <input asp-for="Contract.RegistrationNumber" class="form-control" />
+                <span asp-validation-for="Contract.RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.Institution" class="control-label"></label>
+                <input asp-for="Contract.Institution" class="form-control" />
+                <span asp-validation-for="Contract.Institution" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.ConclusionDate" class="control-label"></label>
+                <input asp-for="Contract.ConclusionDate" class="form-control" />
+                <span asp-validation-for="Contract.ConclusionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.ValidityDate" class="control-label"></label>
+                <input asp-for="Contract.ValidityDate" class="form-control" />
+                <span asp-validation-for="Contract.ValidityDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.ExpirationDate" class="control-label"></label>
+                <input asp-for="Contract.ExpirationDate" class="form-control" />
+                <span asp-validation-for="Contract.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.ClientId" class="control-label"></label>
+                <select asp-for="Contract.ClientId" class="form-control" asp-items="Model.Clients">
+                    <option>-- Nevybráno --</option>
+                </select>
+                <span asp-validation-for="Contract.ClientId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.ContractAdmin" class="control-label"></label>
+                <select asp-for="Contract.ContractAdmin" class="form-control" asp-items="Model.Advisers">
+                    <option>-- Nevybráno --</option>
+                </select>
+                <span asp-validation-for="Contract.ContractAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.AdviserId" class="control-label"></label>
+                <select asp-for="Contract.AdviserId" class="form-control" asp-items="Model.Advisers"></select>
+                <span asp-validation-for="Contract.AdviserId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6 my-3">
+                <label asp-for="Contract.File" class="control-label"></label>
+                <input asp-for="Contract.File" class="form-control" />
+                <span asp-validation-for="Contract.File" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group my-3 col-lg-12">
+                <input type="submit" value="Přidat poradce" class="btn btn-primary text-light" />
+                <a asp-action="Index" class="btn btn-close-white">Zpět</a>
+            </div>
+        </div>
+    </form>
+</div>

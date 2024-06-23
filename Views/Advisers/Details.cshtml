@@ -1,0 +1,71 @@
+﻿@model Contract_Administrator.Models.Adviser
+
+@{
+    ViewData["Title"] = "Podrobnosti poradce";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+        <h4>Poradce</h4>
+    </div>
+    <a asp-action="Index" class="col-lg-auto d-none d-lg-flex">Zpět na přehled</a>
+    <hr />
+</div>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonalIdNum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PersonalIdNum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContractAdviser)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var item in Model.ContractAdviser)
+            {
+                <a asp-controller ="Contracts" asp-action="Details" asp-route-id="@item.ContractId">
+                    Smlouva číslo @item.ContractId<br />
+                </a>
+            }
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-secondary btn-outline-secondary">Upravit</a>
+    <a asp-action="Index" class="btn btn-close-white">Zpět</a>
+</div>
