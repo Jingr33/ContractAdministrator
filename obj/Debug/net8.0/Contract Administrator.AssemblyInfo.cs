@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Contract Administrator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+717eae01bf2717b63a98bf8759a63ada268d67e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Contract Administrator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Contract Administrator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
